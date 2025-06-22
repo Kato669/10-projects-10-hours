@@ -42,8 +42,13 @@ function addNewNote(text = "") {
     });
 
     deleteBtn.addEventListener("click", () => {
-        note.remove();
-
+        const deleteNote = confirm("Do you want to delete note?")
+        if(deleteNote){
+            note.remove();
+        }else{
+            return
+        }
+        
         updateLS();
     });
 
